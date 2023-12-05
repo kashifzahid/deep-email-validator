@@ -11,6 +11,7 @@ export const getMx = async (domain: string): Promise<dns.MxRecord[]> => {
 
 export const getBestMx = async (domain: string): Promise<dns.MxRecord | undefined> => {
   const addresses = await getMx(domain)
+  console.log("addresses",addresses);
   let bestIndex = 0
 
   for (let i = 0; i < addresses.length; i++) {
